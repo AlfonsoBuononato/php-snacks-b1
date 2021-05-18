@@ -13,7 +13,7 @@
     Stampiamo a schermo tutte le partite con questo schema:
     Olimpia Milano - Cantù | 55-60 -->
 
-    <?php 
+   <!--  <?php 
     $matches = [
         [
             "squadre_casa" => "napoli",
@@ -40,6 +40,32 @@
         <?php for($i = 0; $i < count($matches); $i++){ ?>
             <li><?php echo $matches[$i]["squadre_casa"] . " - " . $matches[$i]["squadre_fuoricasa"] . " | " . $matches[$i]["punti_1"] . " - " . $matches[$i]["punti_2"] ?></li>
         <?php } ?>
-    </ul>
+    </ul> -->
+
+
+
+
+
+<!--     PHP Snack 2:
+    Passare come parametri GET (query string) name, mail e age
+    verificare (cercando i metodi che non
+    conosciamo nella documentazione) che:
+    1. name sia più lungo di 3 caratteri
+    2. che mail contenga un punto e una chiocciola
+    3. che age sia un numero.
+    Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
+
+
+    <?php 
+    $nome = $_GET["name"];
+    $email = $_GET["email"];
+    $age = $_GET["age"];
+
+    if( strlen($nome) > 3 && strpos($email, "@") === true && strpos($email, ".") === true && is_nan($age) !== true ){
+        echo "accesso riuscito";
+    }else{
+        echo "accesso negato";
+    }
+    ?>
 </body>
 </html>
