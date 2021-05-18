@@ -56,16 +56,37 @@
     Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
 
 
-    <?php 
+<!--     <?php 
     $nome = $_GET["name"];
     $email = $_GET["email"];
     $age = $_GET["age"];
 
-    if( strlen($nome) > 3 && strpos($email, "@") === true && strpos($email, ".") === true && is_nan($age) !== true ){
+    if( strlen($nome) > 3 && strpos($email, "@") && strpos($email, ".") && is_nan($age) === false ){
         echo "accesso riuscito";
     }else{
         echo "accesso negato";
     }
+    ?> -->
+
+<!--     PHP Snack 3 Bonus (solo come bonus e solo se completati i due precedenti)
+    Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta -->
+
+    <?php 
+    $numeri = [];
+
+    
+    while(count($numeri) <= 15){
+        $random_number = rand(1, 16);
+        if(!in_array($random_number, $numeri)) {
+            $numeri[] = $random_number;
+        };
+    }
+
+    var_dump($numeri);
     ?>
+
+    <?php for($i = 0; $i < count($numeri); $i++){ ?>
+        <span><?php echo $numeri[$i] ?></span>
+    <?php } ?>
 </body>
 </html>
