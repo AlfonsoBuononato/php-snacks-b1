@@ -76,7 +76,7 @@
 
     
     while(count($numeri) <= 15){
-        $random_number = rand(1, 16);
+        $random_number = rand(1, 50);
         if(!in_array($random_number, $numeri)) {
             $numeri[] = $random_number;
         };
